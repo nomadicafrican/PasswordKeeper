@@ -8,4 +8,4 @@
  (7, 'peter@gmail.com', '049293929'),
  (8, 'elvie@gmail.com', '4444444'),
  (9, 'alvin@gmail.com', '55334223'),
- (10, 'lindsay@gmail.com', '54345345'),
+ (10, 'lindsay@gmail.com', '54345345');
