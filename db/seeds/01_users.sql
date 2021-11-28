@@ -4,7 +4,7 @@
  (3, 'Osmo@gmail.com', '131313'),
  (4, 'Tommy@gmail.com', '14567'),
  (5, 'lanny@gmail.com', '98765'),
- (6, 'emma@gmail.com', '888882222'),
+ (6, 'emma@gmail.com', '88882222'),
  (7, 'peter@gmail.com', '049293929'),
  (8, 'elvie@gmail.com', '4444444'),
  (9, 'alvin@gmail.com', '55334223'),
