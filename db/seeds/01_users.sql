@@ -1,11 +1,11 @@
  INSERT INTO users
- VALUES (1, 'richard@gmail.com', '123456'),
- (2, 'Lence@gmail.com', '0909090'),
- (3, 'Osmo@gmail.com', '131313'),
- (4, 'Tommy@gmail.com', '14567'),
- (5, 'lanny@gmail.com', '98765'),
- (6, 'emma@gmail.com', '88882222'),
- (7, 'peter@gmail.com', '049293929'),
- (8, 'elvie@gmail.com', '4444444'),
- (9, 'alvin@gmail.com', '55334223'),
- (10, 'lindsay@gmail.com', '54345345');
+ VALUES ('richard@gmail.com', 'Richard','123456'),
+ ('lence@gmail.com','Lence', '0909090'),
+ ('osmo@gmail.com', 'Osmo','131313'),
+ ('tommy@gmail.com','Tommy','14567'),
+ ('lanny@gmail.com','lanny','98765'),
+ ('emma@gmail.com','emma', '88882222'),
+ ('peter@gmail.com','peter', '049293929'),
+ ('elvie@gmail.com','elvie', '4444444'),
+ ('alvin@gmail.com', 'alvin', '55334223'),
+ ('lindsay@gmail.com','lindsay', '54345345');
