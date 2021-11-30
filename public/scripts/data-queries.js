@@ -5,6 +5,6 @@ const getEmailUserPass = (org_id,db) => {
       return result.rows;
     });
 };
-
+//
 module.exports = {getEmailUserPass};
 
