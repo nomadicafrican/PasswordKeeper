@@ -8,3 +8,4 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL,
   organization_id INTEGER REFERENCES organizations(id) ON DELETE CASCADE
 );
+
