@@ -1,9 +1,10 @@
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
     <div class="card card-body">
-      <h1 class="text-center mb-3"><i class="fas fa-users"></i> Register
+      <h1 class="text-center mb-3">
+        <i class="fas fa-user-plus"></i> Register
       </h1>
-      <form action="/register" method="POST">
+      <form action="/users/register" method="POST">
         <div class="form-group">
           <label for="name">Name</label>
           <input
@@ -13,17 +14,6 @@
             class="form-control"
             placeholder="Enter Name"
             value="<%= typeof name != 'undefined' ? name : '' %>"
-          />
-        </div>
-        <div class="form-group">
-          <label for="organization_id">Organization key</label>
-          <input
-            type="integer"
-            id="organization"
-            name="organization"
-            class="form-control"
-            placeholder="Enter Organization Key"
-            value="<%= typeof integer != 'undefined' ? integer : '' %>"
           />
         </div>
         <div class="form-group">
@@ -47,7 +37,7 @@
             placeholder="Create Password"
             value="<%= typeof password != 'undefined' ? password : '' %>"
           />
-        <!-- </div>
+        </div>
         <div class="form-group">
           <label for="password2">Confirm Password</label>
           <input
@@ -58,12 +48,12 @@
             placeholder="Confirm Password"
             value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
           />
-        </div> -->
+        </div>
         <button type="submit" class="btn btn-primary btn-block">
           Register
         </button>
       </form>
-      <p class="lead mt-4">Have An Account? <a href="/login">Login</a></p>
+      <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
     </div>
   </div>
 </div>
