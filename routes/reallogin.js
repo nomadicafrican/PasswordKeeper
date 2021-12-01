@@ -1,22 +1,29 @@
 const express = require('express');
 const router = express.Router();
 
+
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("login.ejs");
+    // const templateVars ={
+    //   user: req.session.userid
+    // }
+    res.render("login.ejs",);
   });
   router.post("/", (req, res) => {
-    const userlogin = req.body;
+    const user = req.body.email;
 
-    addUserToDatabase(userlogin, db)
-      .then((userlogin) => {
-        console.log('---------->',userlogin)
-        // console.log(userlogin.rows)
-        res.json({ userlogin});
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
+    const queryString = `SELECT * FROM users WHERE email = $1`;
+    db.query(queryString, [user]).then((response) => {
+      if (!response.rows[0]) {
+        res.status(400).send("Pls register");
+        return;
+      } else {
+        console.log(response.rows)
+        req.session["user_id"] = response.rows[0].id;
+        res.redirect("/register");
+      }
+    });
   });
+
   return router;
 };

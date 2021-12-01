@@ -18,7 +18,8 @@ module.exports = (db) => {
       .then((userlogin) => {
         console.log('---------->',userlogin)
         // console.log(userlogin.rows)
-        res.json({ userlogin});
+         res.json({ userlogin});
+        // res.redirect('/')
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
