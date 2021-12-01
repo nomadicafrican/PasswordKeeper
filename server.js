@@ -37,11 +37,8 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/login");
 const widgetsRoutes = require("./routes/widgets");
-<<<<<<< HEAD
 const homePage = require("./routes/login");
-=======
 const GetUserAndPassRoutes = require("./routes/getUserAndPass")
->>>>>>> 48649ce7e110691ee847bd0cb99f72c1ccd1fec4
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
