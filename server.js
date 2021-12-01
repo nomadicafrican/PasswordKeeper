@@ -39,12 +39,13 @@ const usersRoutes = require("./routes/login");
 const widgetsRoutes = require("./routes/widgets");
 const homePage = require("./routes/login");
 const GetUserAndPassRoutes = require("./routes/getUserAndPass")
+const expressLayouts = require('express-ejs-layouts');
 
+app.use(expressLayouts);
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-
 app.use("/password", GetUserAndPassRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
