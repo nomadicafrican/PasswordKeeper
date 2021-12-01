@@ -9,3 +9,4 @@ CREATE TABLE users (
   organization_id INTEGER REFERENCES organizations(id) ON DELETE CASCADE,
   admin BOOLEAN DEFAULT false
 );
+
