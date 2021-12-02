@@ -4,14 +4,36 @@ const router  = express.Router();
 //Login Page
 router.get('/login', (req, res) => res.render('login')); //from views folder
 
-
-
 //Register Page
-router.get('/register', (req, res) => res.render('register')); //from views folder
-
-
-
+router.get('/register', (req, res) => res.render('register'))
 
 
 module.exports = router;
 
+
+// module.exports = (db) => {
+//   router.get("/users/login", (req, res) => {
+//     // const templateVars ={
+//     //   user: req.session.userid
+//     // }
+//     res.render("login.ejs",);
+//   });
+//   router.post("/login", (req, res) => {
+//     const user = req.body.email;
+
+//     const queryString = `SELECT * FROM users WHERE email = $1`;
+//     db.query(queryString, [user]).then((response) => {
+//       if (!response.rows[0]) {
+//         res.status(400).send("Pls register");
+//         return;
+//       } else {
+//         console.log(response.rows)
+//         req.session["user_id"] = response.rows[0].organization_id;
+//         console.log(req.session['user_id'])
+//         res.redirect("/users/register");
+//       }
+//     });
+//   });
+
+//   return router;
+// };

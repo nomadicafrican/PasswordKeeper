@@ -34,11 +34,17 @@ app.use(
 
 app.use(express.static("public"));
 
-//Routes
-app.use('/', require('./routes/index')); //from routes folder
-app.use('/users', require('./routes/users')); //from routes folder
+//Separated Routes for each Resource
+//Note: Feel free to replace the example routes below with your own
+const indexRouter = require('./routes/index');
+const usersRoutes = require('./routes/users');
 
-//DB Config
+
+//Mount all resource routes
+//Note: Feel free to replace the example routes below with your own
+app.use("/", indexRouter);
+app.use("/users", usersRoutes);
+
 
 
 app.listen(PORT, () => {
