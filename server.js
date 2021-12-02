@@ -13,7 +13,7 @@ const morgan = require("morgan");
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
-db.connect();
+
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -22,6 +22,8 @@ app.use(morgan("dev"));
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+
+app.use(express.urlencoded ({extended: false}));
 
 app.use(
   "/styles",
@@ -38,14 +40,14 @@ app.use(express.static("public"));
 //Note: Feel free to replace the example routes below with your own
 const indexRouter = require('./routes/index');
 const usersRoutes = require('./routes/users');
+const logoutRouter = require('./routes/logout');
 
 
 //Mount all resource routes
 //Note: Feel free to replace the example routes below with your own
-app.use("/", indexRouter);
-app.use("/users", usersRoutes);
-
-
+app.use('/', indexRouter);
+app.use('/users', usersRoutes);
+app.use('/logout', logoutRouter);
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

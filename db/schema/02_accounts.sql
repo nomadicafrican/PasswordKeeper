@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS accounts CASCADE;
+
 CREATE TABLE accounts (
   id SERIAL PRIMARY KEY NOT NULL,
   organization_id INTEGER REFERENCES organizations(id) ON DELETE CASCADE,
