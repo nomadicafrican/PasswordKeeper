@@ -19,7 +19,8 @@ module.exports = (db) => {
         return;
       } else {
         console.log(response.rows)
-        req.session["user_id"] = response.rows[0].id;
+        req.session["user_id"] = response.rows[0].organization_id;
+        console.log(req.session['user_id'])
         res.redirect("/register");
       }
     });
