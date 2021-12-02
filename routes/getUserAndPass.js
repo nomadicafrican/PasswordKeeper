@@ -7,6 +7,7 @@ module.exports = (db) => {
   router.get('/:id',(req,res) => {
     GetdataFunc.getEmailUserPass(req.params.id,db)
       .then((data) => {
+        console.log('data', data)
         res.json(data)
       })
       .catch(err => {

@@ -7,6 +7,7 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 
 // PG database client/connection setup
@@ -31,7 +32,7 @@ app.use(
     isSass: false, // false => scss, true => sass
   })
 );
-
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieSession({
   name: 'session',
