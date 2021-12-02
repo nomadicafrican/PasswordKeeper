@@ -20,8 +20,8 @@ module.exports = (db) => {
       } else {
         console.log(response.rows)
         req.session["user_id"] = response.rows[0].organization_id;
-        console.log(req.session['user_id'])
-        res.redirect("/register");
+        let idOfUser = req.session["user_id"]
+        res.redirect(`/password/${idOfUser}`);
       }
     });
   });

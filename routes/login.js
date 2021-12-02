@@ -16,9 +16,10 @@ module.exports = (db) => {
 
     addUserToDatabase(userlogin, db)
       .then((userlogin) => {
-        console.log('---------->',userlogin)
-        // console.log(userlogin.rows)
-         res.json({ userlogin});
+        // console.log('---------->',userlogin)
+       req.session['user_id'] = userlogin.organization_id
+         res.redirect(`/password/${req.session['user_id']}`)
+        // res.json({ userlogin});
         // res.redirect('/')
       })
       .catch((err) => {
@@ -58,7 +59,7 @@ const userExists = (user, db)=> {
         // console.log('it exists')
       return true
       }else{
-      console.log('it doesnt exists')
+      // console.log('it doesnt exists')
       return false
     }
     })

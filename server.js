@@ -47,8 +47,8 @@ const widgetsRoutes = require("./routes/widgets");
 const homePage = require("./routes/login");
 const loginPage = require('./routes/reallogin')
 const GetUserAndPassRoutes = require("./routes/getUserAndPass")
-const expressLayouts = require('express-ejs-layouts');
 const editPage = require('./routes/create_password')
+const expressLayouts = require('express-ejs-layouts');
 
 app.use(expressLayouts);
 // Mount all resource routes
