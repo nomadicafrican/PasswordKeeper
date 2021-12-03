@@ -48,13 +48,9 @@ const widgetsRoutes = require("./routes/widgets");
 const homePage = require("./routes/login");
 const loginPage = require('./routes/reallogin')
 const GetUserAndPassRoutes = require("./routes/getUserAndPass")
-<<<<<<< HEAD
-const expressLayouts = require('express-ejs-layouts');
-// const editPage = require('./routes/create_password')
-=======
 const editPage = require('./routes/create_password')
+const welcomePage = require('./routes/homepage')
 const expressLayouts = require('express-ejs-layouts');
->>>>>>> f705be3be021e10d3a97339af88ba90f3c847b4a
 
 app.use(expressLayouts);
 // Mount all resource routes
@@ -64,7 +60,8 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/password", GetUserAndPassRoutes(db));
 app.use("/register", homePage(db));
 app.use('/login', loginPage(db))
-// app.use('/edit', editPage(db))
+app.use('/edit', editPage(db))
+// app.use('/homepage', welcomePage(db))
 
 // Note: mount other resources here, using the same pattern above
 
