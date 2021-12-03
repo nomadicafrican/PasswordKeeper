@@ -4,6 +4,7 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("register.ejs");
-  })
+    res.render("addPage.ejs");
+  });
+  return router;
 };
