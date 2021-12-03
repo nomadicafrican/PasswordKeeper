@@ -7,7 +7,6 @@ module.exports = (db) => {
   router.get('/:id',(req,res) => {
     GetdataFunc.getEmailUserPass(req.params.id,db)
       .then((data) => {
-<<<<<<< HEAD
         const arr =[];
         const templateVar = {};
 
@@ -28,10 +27,6 @@ module.exports = (db) => {
         const result = {templateVar}
 
         res.render("loadingID", result)
-=======
-        console.log('data', data)
-        res.json(data)
->>>>>>> f705be3be021e10d3a97339af88ba90f3c847b4a
       })
       .catch(err => {
         res
@@ -40,8 +35,8 @@ module.exports = (db) => {
       });
   });
 
-  // router.post('/:id/delete',(req,res) => {
-  //   GetdataFunc.deletePassword(req.params.id,db)
+  // router.post('/addPass',(req,res) => {
+  //   GetdataFunc.addPass(req.params,db)
   //     .then((data) => {
   //       res.json(data)
   //     })
