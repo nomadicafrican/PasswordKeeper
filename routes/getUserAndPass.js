@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const GetdataFunc = require('../public/scripts/data-queries');
+const GetdataFunc = require('../utils/get-email-user-pass-query');
 
 // GET email, username and password
 module.exports = (db) => {
@@ -36,38 +36,39 @@ module.exports = (db) => {
       });
   });
 
-  // router.post('/:id,(req,res) => {
-  //   GetdataFunc.getEmailUserPass(req.params.id,db)
-  //   .then((data) => {
-  //     const arr =[];
-  //     const templateVar = {};
+  router.post('/:id', (req,res)=>{
+    const data = {...req.body, id: req.params.id}
+    console.log('data', data)
+    Edit(data ,db)
+    .then((result)=>{
+      // console.log('updated succesfully')
+     res.redirect(`/password/${req.session['user_id']}`)
+    })
+    .catch((err)=>{
+      console.log('error',err)
+      res.status(404).send('something went wrong')
+    })
+   })
 
-  //     for (let i in data) {
-  //       arr.push(data[i].name);
-  //     }
-  //     console.log(arr);
 
-  //     console.log('data', data);
+   return router
+  };
 
+  const Edit = ({name, email, password,category,id},db) => {
+   return db.query( `
+     UPDATE accounts
+     SET
+         name = $1,
+         organizations_email = $2,
+         organizations_password= $3,
+         category =$4
+     WHERE
+         id = $5 `, [name, email, password,category, id])
+   .then((result) => {
+     return result.rows;
+   })
 
-  //     for (let j in data) {
-  //       for (let l of arr) {
-  //         if (data[j].name === l) {
-  //           templateVar[l] = data[j];
-  //         }
-  //       }
-  //       }
-  //     const result = {templateVar};
-  //     console.log('result', result);
-  //     res.render("loadingID", result);
-  //   })
-  //   .catch(err => {
-  //     res
-  //       .status(500)
-  //       .json({ error: err.message });
-  //   });
-// });
-};
+  }
 
 
 
