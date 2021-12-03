@@ -13,9 +13,9 @@ module.exports = (db) => {
         for (let i in data) {
           arr.push(data[i].name);
         }
-        console.log(arr);
+        // console.log(arr);
 
-        console.log('data', data);
+        // console.log('data', data);
 
 
         for (let j in data) {
@@ -26,7 +26,7 @@ module.exports = (db) => {
           }
           }
         const result = {templateVar};
-        console.log('result', result);
+        // console.log('result', result);
         res.render("loadingID", result);
       })
       .catch(err => {
@@ -39,15 +39,27 @@ module.exports = (db) => {
   router.post('/:id', (req,res)=>{
     const data = {...req.body, id: req.params.id}
     console.log('data', data)
-    Edit(data ,db)
-    .then((result)=>{
-      // console.log('updated succesfully')
-     res.redirect(`/password/${req.session['user_id']}`)
-    })
-    .catch((err)=>{
-      console.log('error',err)
-      res.status(404).send('something went wrong')
-    })
+    if(data.id === 0){
+      Add(data ,db)
+      .then((result)=>{
+        res.redirect(`/password/${req.session['user_id']}`)
+        // console.log('updated succesfully')
+      })
+        .catch((err)=>{
+          console.log('error',err)
+          res.status(404).send('something went wrong')
+        })
+    } else{
+      Edit(data ,db)
+      .then((result)=>{
+        console.log('updated succesfully')
+        res.redirect(`/password/${req.session['user_id']}`)
+      })
+      .catch((err)=>{
+        console.log('error',err)
+        res.status(404).send('something went wrong')
+        })
+    }
    })
 
 
@@ -65,10 +77,23 @@ module.exports = (db) => {
      WHERE
          id = $5 `, [name, email, password,category, id])
    .then((result) => {
+
      return result.rows;
    })
 
+
   }
+  const Add = (data,db) => {
+    return db.query( `
+    INSERT INTO accounts (name, email, password, category)
+    VALUES  ($1,$2,$3,$4)
+    `, [data.name, data.email, data.password,data.category])
+    .then((result) => {
+      // console.log('hi this is .then');
+      return result.rows;
+    })
+  }
+
 
 
 

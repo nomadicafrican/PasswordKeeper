@@ -18,7 +18,7 @@ module.exports = (db) => {
         res.status(400).send("Pls register");
         return;
       } else {
-        console.log(response.rows)
+        // console.log(response.rows)
         req.session["user_id"] = response.rows[0].organization_id;
         let idOfUser = req.session["user_id"]
         res.redirect(`/password/${idOfUser}`);

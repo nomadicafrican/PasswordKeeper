@@ -31,7 +31,7 @@ module.exports = (db) => {
 
 const addUserToDatabase = (user, db) => {
 
-  console.log('userExists', userExists(user,db))
+  // console.log('userExists', userExists(user,db))
   return userExists(user,db).then((res)=>{
     if (res){
       return new Promise((res,rej)=>{
@@ -42,7 +42,7 @@ const addUserToDatabase = (user, db) => {
       VALUES ($1,$2,$3,$4) Returning *; `, [ user.email, user.name, user.password, user.organization_id])
         .then((res) => {
          return res.rows[0]
-          console.log('res', res) ;
+          // console.log('res', res) ;
         })
         .catch((error) => {
           console.log("err1", error);
@@ -54,7 +54,7 @@ const userExists = (user, db)=> {
   return db.query(`SELECT email FROM  users WHERE email = $1;`, [ user.email])
     .then((res) => {
 
-      console.log('hello', res.rows)
+      // console.log('hello', res.rows)
       if (res.rows.length > 0){
         // console.log('it exists')
       return true

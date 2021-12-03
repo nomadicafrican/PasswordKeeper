@@ -48,12 +48,12 @@ app.use(cookieSession({
 const homePage = require("./routes/login");
 const loginPage = require('./routes/reallogin');
 const GetUserAndPassRoutes = require("./routes/getUserAndPass");
-const editPage = require('./routes/create_password');
+const editPage = require('./routes/edit_password');
 // const welcomePage = require('./routes/homepage');
 const addpage = require('./routes/add');
 const expressLayouts = require('express-ejs-layouts');
 // const nst indexRouter = require('./routes/inde x');
-console.log(addpage(db))
+// console.log(addpage(db))
 app.use(expressLayouts);
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -64,7 +64,7 @@ app.use("/password", GetUserAndPassRoutes(db));
 app.use("/register", homePage(db));
 app.use('/login', loginPage(db));
 app.use('/edit', editPage(db));
-app.use('/addPage', addpage(db));
+app.use('/add', addpage(db));
 
 
 // Note: mount other resources here, using the same pattern above

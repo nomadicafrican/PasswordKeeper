@@ -6,8 +6,8 @@
 //     });
 // };
 
-// const Eddit = (name, email, password,category,db) => {
-//   db.query(db.querry (`
+// const Edit = ({name, email, password,category,id},db) => {
+//   db.query( `
 //     UPDATE account
 //     SET
 //         name = $1,
@@ -15,7 +15,7 @@
 //         organizations_password= $3,
 //         category =$4,
 //     WHERE
-//         organization = req.param.id; `, [name, email, password,category])
+//         id = $5 `, [name, email, password,category, id])
 //   .then((result) => {
 //     return result.rows;
 // }
