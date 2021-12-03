@@ -46,11 +46,11 @@ app.use(cookieSession({
 const usersRoutes = require("./routes/login");
 const widgetsRoutes = require("./routes/widgets");
 const homePage = require("./routes/login");
-const loginPage = require('./routes/reallogin')
-const GetUserAndPassRoutes = require("./routes/getUserAndPass")
-const editPage = require('./routes/create_password')
-const welcomePage = require('./routes/homepage')
-const addpage = require('./routes/add')
+const loginPage = require('./routes/reallogin');
+const GetUserAndPassRoutes = require("./routes/getUserAndPass");
+const editPage = require('./routes/create_password');
+const welcomePage = require('./routes/homepage');
+const addpage = require('./routes/add');
 const expressLayouts = require('express-ejs-layouts');
 // const nst indexRouter = require('./routes/inde x');
 
@@ -62,9 +62,9 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/password", GetUserAndPassRoutes(db));
 app.use("/register", homePage(db));
-app.use('/login', loginPage(db))
-app.use('/edit', editPage(db))
-app.use('/addPage', addpage(db))
+app.use('/login', loginPage(db));
+app.use('/edit', editPage(db));
+app.use('/addPage', addpage(db));
 
 
 // Note: mount other resources here, using the same pattern above

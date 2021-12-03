@@ -32,7 +32,7 @@
             <td><%= templateVar[p].organizations_password %></td>
             <td><%= templateVar[p].category %></td>
             <td>
-              <form method="GET" action="/register %>">
+              <form method="GET" action="/edit/<%= templateVar[p].id %>">
                 <button type="edit" name="edit" class="btn btn-outline-success">Edit</button>
               </form>
             </td>
