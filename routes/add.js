@@ -6,5 +6,5 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     res.render("addPage.ejs");
   });
-  return router;
-};
+return router
+}

@@ -53,7 +53,7 @@ const editPage = require('./routes/create_password');
 const addpage = require('./routes/add');
 const expressLayouts = require('express-ejs-layouts');
 // const nst indexRouter = require('./routes/inde x');
-
+console.log(addpage(db))
 app.use(expressLayouts);
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
