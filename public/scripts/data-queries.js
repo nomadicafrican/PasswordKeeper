@@ -1,13 +1,13 @@
 
-const getEmailUserPass = (org_id,db) => {
-  return db.query(`SELECT id, name, organizations_email, organizations_password, category FROM accounts WHERE organization_id =$1`,[org_id])
-    .then((result) => {
-      return result.rows;
-    });
-};
+// const getEmailUserPass = (org_id,db) => {
+//   return db.query(`SELECT id, name, organizations_email, organizations_password, category FROM accounts WHERE organization_id =$1`,[org_id])
+//     .then((result) => {
+//       return result.rows;
+//     });
+// };
 
-// const Eddit = (name, email, password,category,db) => {
-//   db.query(db.querry (`
+// const Edit = ({name, email, password,category,id},db) => {
+//   db.query( `
 //     UPDATE account
 //     SET
 //         name = $1,
@@ -15,7 +15,7 @@ const getEmailUserPass = (org_id,db) => {
 //         organizations_password= $3,
 //         category =$4,
 //     WHERE
-//         organization = req.param.id; `, [name, email, password,category])
+//         id = $5 `, [name, email, password,category, id])
 //   .then((result) => {
 //     return result.rows;
 // }

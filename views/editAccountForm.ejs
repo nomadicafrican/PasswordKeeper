@@ -1,6 +1,8 @@
+<%- include('partials/_header') %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +15,7 @@
   <h1 class="text-center mb-3"><i class="fa fa-key" aria-hidden="true"></i> Edit Your Password
   </h1>
 <body>
-  <form class = 'form' id = 'passwordGeneratorForm'>
+  <!-- <form class = 'form' id = 'passwordGeneratorForm'> -->
   <div class = 'container'></div>
   <!-- <h1 class="text-center mb-3"><i class="fa fa-key" aria-hidden="true"></i> -->
   <!-- <h1>Password Generator</h1> -->
@@ -24,23 +26,24 @@
 
 
   <!-- <label for="category">category</label>
-  <select name="category" id="category">
-     <option value="Social">Social</option>
-     <option value="Social">Social</option>
-     <option value="Entertainment">Entertainment</option>
-   </select> -->
+    <select name="category" id="category">
+      <option value="Social">Social</option>
+      <option value="Social">Social</option>
+      <option value="Entertainment">Entertainment</option>
+    </select> -->
+    <form method="POST" action="/password/<%= id %>">
 
     <label for="name">name</label>
-    <input type="text" id="name" value = '<%= name %>'>
+    <input type="text" id = 'name' name="name" value = '<%= name %>'>
 
     <label for="email">email</label>
-    <input type="text" id="email" value = '<%= organizations_email %>'  >
+    <input type="text" id="email" name = 'email' value = '<%= organizations_email %>'  >
 
     <label for="password">password</label>
-    <input type="text" id="password" value = '<%= organizations_password %>'>
+    <input type="text" id="password" name = 'password' value = '<%= organizations_password %>'>
 
     <label for= 'catergory'> category </label>
-    <input type="text" id="password" value = '<%=category %>' >
+    <input type="text" id="password" name = 'category' value = '<%=category %>' >
 
 
     <!-- id: 2,
@@ -49,10 +52,10 @@
     organizations_email: 'LHL@webacademy.com',
     organizations_password: 'password',
     category: 'coding' -->
-    <form method="post" action="/password/<%= organization_id %>">
+
       <button type="edit" name="edit" class="btn btn-outline-success">Generate New Account</button>
     </form>
-  </form>
+  <!-- </form> -->
 </body>
 
 </html>
