@@ -11,22 +11,23 @@ module.exports = (db) => {
         const templateVar = {};
 
         for (let i in data) {
-          arr.push(data[i].name)
+          arr.push(data[i].name);
         }
-        console.log(arr)
+        console.log(arr);
+
+        console.log('data', data);
 
 
         for (let j in data) {
           for (let l of arr) {
             if (data[j].name === l) {
-              templateVar[l] = data[j]
-              }
+              templateVar[l] = data[j];
             }
           }
-
-        const result = {templateVar}
-
-        res.render("loadingID", result)
+          }
+        const result = {templateVar};
+        console.log('result', result);
+        res.render("loadingID", result);
       })
       .catch(err => {
         res
@@ -35,22 +36,37 @@ module.exports = (db) => {
       });
   });
 
-  // router.post('/addPass',(req,res) => {
-  //   GetdataFunc.addPass(req.params,db)
-  //     .then((data) => {
-  //       res.json(data)
-  //     })
-  //     .catch(err => {
-  //       res
-  //         .status(500)
-  //         .json({ error: err.message });
-  //     });
-  // });
+  // router.post('/:id,(req,res) => {
+  //   GetdataFunc.getEmailUserPass(req.params.id,db)
+  //   .then((data) => {
+  //     const arr =[];
+  //     const templateVar = {};
+
+  //     for (let i in data) {
+  //       arr.push(data[i].name);
+  //     }
+  //     console.log(arr);
+
+  //     console.log('data', data);
 
 
-
-
-  return router;
+  //     for (let j in data) {
+  //       for (let l of arr) {
+  //         if (data[j].name === l) {
+  //           templateVar[l] = data[j];
+  //         }
+  //       }
+  //       }
+  //     const result = {templateVar};
+  //     console.log('result', result);
+  //     res.render("loadingID", result);
+  //   })
+  //   .catch(err => {
+  //     res
+  //       .status(500)
+  //       .json({ error: err.message });
+  //   });
+// });
 };
 
 
