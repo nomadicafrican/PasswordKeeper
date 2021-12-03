@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src = "/scripts/password_generator.js" type = 'text/javascript'></script>
+  <!-- <script src = "/scripts/password_generator.js" type = 'text/javascript'></script> -->
   <title>Edit</title>
 </head>
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
   <div class="card card-body">
-  <h1 class="text-center mb-3"><i class="fa fa-key" aria-hidden="true"></i> Edit Your Password
+  <h1 class="text-center mb-3"><i class="fa fa-key" aria-hidden="true"></i> Add Your Password
   </h1>
 <body>
-  <form class = 'form' id = 'passwordGeneratorForm'>
+  <form method="POST" action="/add/<%= organization_id%>">
   <div class = 'container'></div>
   <!-- <h1 class="text-center mb-3"><i class="fa fa-key" aria-hidden="true"></i> -->
   <!-- <h1>Password Generator</h1> -->
@@ -23,15 +23,23 @@
   <input type = "number"min = 1 max = 50 id = "characterAmountNumber" value = 10> -->
 
 
-    <label for="includeUpperCase">Include Upper Case</label>
-    <input type="checkbox" id="includeUpperCase">
+    <!-- <label for="includeUpperCase">Include Upper Case</label>
+    <input type="checkbox" id="includeUpperCase"> -->
 
-    <label for="includeNumbers">name</label>
-    <input type="text" id="includeNumbers">
-
-    <label for="includeSymbols">email</label>
-    <input type="text" id="includeSymbols">
-
+    <label for="text">name</label>
+    <input type="text" id="name" name = 'name'value =''>
+    <label for="text">username</label>
+    <input type="text" id="username" name = 'username'value =''>
+    <label for="text">password</label>
+    <input type="text" id="password" name = 'password' value = ''>
+    <label for="text">category</label>
+    <input type="text" id="category" name = 'category' value =''>
+<!-- id: 2,
+    organization_id: 1,
+    name: 'webacademy',
+    organizations_email: 'LHL@webacademy.com',
+    organizations_password: 'password',
+    category: 'coding' -->
     <button class="btn btn-lg btn-primary" type="submit">Generate New Password</button>
   </form>
 </body>
