@@ -35,8 +35,8 @@ module.exports = (db) => {
       });
   });
 
-  // router.post('/:id/delete',(req,res) => {
-  //   GetdataFunc.deletePassword(req.params.id,db)
+  // router.post('/addPass',(req,res) => {
+  //   GetdataFunc.addPass(req.params,db)
   //     .then((data) => {
   //       res.json(data)
   //     })
