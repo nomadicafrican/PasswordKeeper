@@ -1,16 +1,46 @@
-<%- include('partials/_header') %>
 <!DOCTYPE html>
+<%- include('partials/_header') %>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <h1 class="mt-4">Password of my organization</h1>
-  <h1 class="mt-4">Generate my own passwords</h1>
-  <a href="/users/login" class="btn btn-secondary">Logout</a>
 </head>
+<div class="row mt-5">
+  <div class="col-md-10 m-auto">
+  <div class="card card-body">
+    <h1 class="text-center mb-3"><i class="fa fa-key" aria-hidden="true"></i> Password generator
 <body>
+  <div class = 'container'></div>
+  <h2>Create your own password</h2>
+  <form action = "/edit" method ="POST">
+    <div>
+     <label for="characterAmountNumber">Number Of Characters</label>"
+     <input type="range" min = 1 max = 50 id = "characterAmountRange" value = 10>
+     <input type = "number"min = 1 max = 50 id = "characterAmountNumber" value = 10>
+    </div>
+    <div>
+      <label for="includeUpperCase">Include Upper Case</label>
+      <input type="checkbox" id="includeUpperCase">
+     </div>
+     <div>
+      <label for="includeNumbers">Include Numbers</label>
+      <input type="checkbox" id="includeNumbers">
+     </div>
+     <div>
+      <label for="includeSymbols">Include Symbols</label>
+      <input type="checkbox" id="includeNumbers">
+     </div>
+  </form>
+    <!-- <button type = 'submit'> Generate Password</button> -->
+    <!-- <button type="button" class="btn btn-primary btn-lg">Generate Password</button> -->
+    <div class="d-grid gap-2">
+      <button class="btn btn-lg btn-primary" type="button">Generate Password</button>
+
+    </div>
+  </form>
 </body>
+
 </html>
+
 

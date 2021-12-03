@@ -20,7 +20,7 @@ router.post('/register', (req, res) => {
 })
 
 //Dashboard Page
-router.get('/dashboard', (req, res) => res.render('dashboard')); //from views folder
+router.get('/dashboard', (req, res) => res.render('dashboard')); 
 
 //Dashboard Handle
 router.post('/dashboard', (req, res) => {
