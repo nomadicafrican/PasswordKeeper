@@ -7,6 +7,7 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 
 // PG database client/connection setup
@@ -31,7 +32,7 @@ app.use(
     isSass: false, // false => scss, true => sass
   })
 );
-
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieSession({
   name: 'session',
@@ -47,8 +48,13 @@ const widgetsRoutes = require("./routes/widgets");
 const homePage = require("./routes/login");
 const loginPage = require('./routes/reallogin')
 const GetUserAndPassRoutes = require("./routes/getUserAndPass")
+<<<<<<< HEAD
 const expressLayouts = require('express-ejs-layouts');
 // const editPage = require('./routes/create_password')
+=======
+const editPage = require('./routes/create_password')
+const expressLayouts = require('express-ejs-layouts');
+>>>>>>> f705be3be021e10d3a97339af88ba90f3c847b4a
 
 app.use(expressLayouts);
 // Mount all resource routes
