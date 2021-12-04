@@ -21,6 +21,7 @@ module.exports = (db) => {
  db.query(queryString, [req.session['user_id']])
   .then((response)=>{
     const user = response.rows[0]
+    // console.log(response.rows[0])
     const templateVars = {
       organization_id : user.organization_id
     }

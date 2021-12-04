@@ -52,6 +52,7 @@ const editPage = require('./routes/edit_password');
 // const welcomePage = require('./routes/homepage');
 const addpage = require('./routes/add');
 const expressLayouts = require('express-ejs-layouts');
+const generatePassword = require('./routes/password_generator')
 // const nst indexRouter = require('./routes/inde x');
 // console.log(addpage(db))
 app.use(expressLayouts);
@@ -65,6 +66,7 @@ app.use("/register", homePage(db));
 app.use('/login', loginPage(db));
 app.use('/edit', editPage(db));
 app.use('/add', addpage(db));
+app.use('/generate' , generatePassword(db))
 
 
 // Note: mount other resources here, using the same pattern above
