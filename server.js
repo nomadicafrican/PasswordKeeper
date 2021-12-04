@@ -2,7 +2,7 @@
 require("dotenv").config();
 
 // Web server config
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8080;
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
@@ -66,7 +66,6 @@ app.use('/login', loginPage(db));
 app.use('/edit', editPage(db));
 app.use('/add', addpage(db));
 
-
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -79,3 +78,4 @@ app.use('/add', addpage(db));
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
