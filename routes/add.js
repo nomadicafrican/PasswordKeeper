@@ -3,10 +3,9 @@ const router = express.Router();
 // getFunction = require('../utils/add-account')
 
 const Add = (data,db) => {
-  return db.query( `
-  INSERT INTO accounts (name, organizations_email, organizations_password, category, organization_id)
-  VALUES  ($1,$2,$3,$4, $5)
-  `, [data.name, data.username, data.password,data.category, data.id])
+  return db.query( `INSERT INTO accounts(name, organizations_email, organizations_password,category, organization_id)
+  VALUES ($1,$2,$3,$4,$5);
+  `, [data.name, data.organizations_email, data.organizations_password,data.category, data.organization_id])
   .then((result) => {
     // console.log('hi this is .then');
     return result.rows;

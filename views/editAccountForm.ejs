@@ -18,20 +18,23 @@
   <div class = 'container'></div>
 
     <form method="POST" action="/password/<%= id %>">
-
-    <label for="name">name</label>
-    <input type="text" id = 'name' name="name" value = '<%= name %>'>
-
-    <label for="email">email</label>
-    <input type="text" id="email" name = 'email' value = '<%= organizations_email %>'  >
-
-    <label for="password">password</label>
-    <input type="text" id="password" name = 'password' value = '<%= organizations_password %>'>
-
-    <label for= 'catergory'> category </label>
-    <input type="text" id="password" name = 'category' value = '<%=category %>' >
-
-      <button type="edit" name="edit" class="btn btn-outline-success">Generate New Account</button>
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id = 'name' name="name" value = '<%= name %>'>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email" name = 'email' value = '<%= organizations_email %>'  >
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="text" id="password" name = 'password' value = '<%= organizations_password %>'>
+    </div>
+    <div>
+      <label for= 'catergory'> Category </label>
+      <input type="text" id="password" name = 'category' value = '<%=category %>' >
+    </div>
+      <button type="edit" name="edit" class="btn btn-outline-success">Submit</button>
     </form>
 
 </body>

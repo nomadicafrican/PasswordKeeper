@@ -94,6 +94,11 @@ module.exports = (db) => {
     })
   }
 
+  const Del =(data,db) => {
+    return db.query(`
+    `)
+  }
+
 
 
 
