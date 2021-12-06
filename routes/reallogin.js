@@ -15,7 +15,7 @@ module.exports = (db) => {
     const queryString = `SELECT * FROM users WHERE email = $1`;
     db.query(queryString, [user]).then((response) => {
       if (!response.rows[0]) {
-        res.status(400).send("Pls register");
+        res.status(400).send("Please register");
         return;
       } else {
         // console.log(response.rows)

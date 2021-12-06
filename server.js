@@ -49,6 +49,7 @@ const homePage = require("./routes/login");
 const loginPage = require('./routes/reallogin');
 const GetUserAndPassRoutes = require("./routes/getUserAndPass");
 const editPage = require('./routes/edit_password');
+// const deletePage = require('./routes/delete_password')
 // const welcomePage = require('./routes/homepage');
 const addpage = require('./routes/add');
 const expressLayouts = require('express-ejs-layouts');
@@ -66,7 +67,8 @@ app.use("/register", homePage(db));
 app.use('/login', loginPage(db));
 app.use('/edit', editPage(db));
 app.use('/add', addpage(db));
-app.use('/generate' , generatePassword(db))
+app.use('/generate' , generatePassword(db));
+// app.use('/delete', deletePage(db));
 
 // Note: mount other resources here, using the same pattern above
 

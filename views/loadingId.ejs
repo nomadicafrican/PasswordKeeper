@@ -1,29 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+  <script src = "/scripts/password_generator.js" type = 'text/javascript'></script>
+</head>
 <body>
+
  <style>
+
    body {
      background-color: #ECECEC;
+     margin: 5em
   }
    p {
-     font-size: 150%;
+     font-size: 200%;
      border: 60px;
      padding: 60px;
   };
  </style>
-  <main style="margin: 3em;">
+
+
+<!--Passwords created by other-->
+  <main style="margin: -5em;">
     <%- include('partials/_header') %>
+    <div class="card border-primary mb-1" style="max-width: 100%;">
+      <div class="card-header"> <h3>Passwords created by other users</h3></div>
+      <div class="card-body">
     <table class="table table-bordered">
       <thead>
-        <tr style="width:100%">
+        <tr style="width:90%">
           <h1>
-          <th scope="col">Organization Name</th>
+          <th scope="col">Site Name</th>
           <th scope="col">Username</th>
           <th scope="col">Password</th>
           <th scope="col">Category</th>
           <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
         </h1>
         </tr>
       </thead>
@@ -33,26 +44,58 @@
           <tr>
             <td><%= templateVar[p].name %></td>
             <td><%= templateVar[p].organizations_email %></td>
-            <td><%= templateVar[p].organizations_password %></td>
+            <div>
+              <td><%= templateVar[p].organizations_password %></td>
+            </div>
+
             <td><%= templateVar[p].category %></td>
             <td>
               <form method="GET" action="/edit/<%= templateVar[p].id %>">
-                <button type="edit" name="edit" class="btn btn-outline-success">Edit</button>
+                <button type="edit" name="edit" class="btn btn-success">Edit</button>
               </form>
             </td>
-              <td>
-                <form method="POST" action="/register">
-                  <button type="delete" name="delete" class="btn btn-outline-primary">Delete</button>
-                </form>
-              </td>
           </tr>
           <%}%>
       </tbody>
     </table>
     <form method="GET" action="/add" >
-      <button type="input" name="add" class="btn btn-primary">ADD account</button>
-
+      <button type="input" name="add" class="btn btn-primary btn-lg">Add a new account</button>
     </form>
+
+    <!-- Generate random password -->
+    <main style="margin: 1em;">
+      <div class="card border-primary mb-1" style="max-width: 100%;">
+        <div class="card-header"> <h2>Generate a random password</h2></div>
+        <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr style="width:100%">
+    <form class = 'form' id = 'passwordGeneratorForm'>
+      <div class = 'container'>
+
+    <h4 id = 'passwordDisplay'>Your customized password displays here</h4>
+
+    <table class="table table-bordered">
+      <div>
+      <label for="characterAmountNumber">Number Of Characters</label>
+      <input type="range" min = 1 max = 50 id = "characterAmountRange" value = 10>
+      <input type = "number"min = 1 max = 50 id = "characterAmountNumber" value = 10>
+
+        <label for="includeUpperCase">Include Upper Case</label>
+        <input type="checkbox" id="includeUpperCase">
+
+        <label for="includeNumbers">Include Numbers</label>
+        <input type="checkbox" id="includeNumbers">
+
+        <label for="includeSymbols">Include symbols</label>
+        <input type="checkbox" id="includeSymbols">
+
+        <div class="modal-footer">
+        <button class="btn btn-lg btn-primary" type="submit">Generate Password</button>
+      </div>
+      </form>
+    </div>
+  </table>
 
   </main>
   <!-- Bootstrap JS -->
