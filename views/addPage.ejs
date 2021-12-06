@@ -12,6 +12,7 @@
   <title>Edit</title>
 
 </head>
+
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
   <div class="card card-body">
@@ -30,27 +31,27 @@
    };
   </style>
 
-<div class="card bg-light mb-3" style="max-width: 70rem;">
-  <div class="card-header">Provide details about a new account</div>
+<div class="card bg-light mb-" style="max-width: 100rem;">
+  <div class="card-header">Provide details about your new account</div>
   <div class="card-body">
 
   <form method="POST" action="/add/<%= organization_id%>">
   <div class = 'container'></div>
 
-    <label for="text" class="form-label mt-4"></label>Name</label>
-    <input type="text" id="name" name = 'name' value =''>
+    <label for="text" class="form-label mt-3"><h5>Name</h5></label>
+    <input type="text" id="name" size="50" name = 'name' value =''>
 
-    <label for="text">Username</label>
-    <input type="text" id="ogranizations_email" name = 'organizations_email'value =''>
+    <label for="text" class="form-label mt-3"><h5>Username</h5></label>
+    <input type="text" id="ogranizations_email" size="50" name ='organizations_email'value =''>
 
-    <label for="text">Password</label>
-    <input type="text" id="organizations_password" name = 'organizations_password' value = ''>
+    <label for="text" class="form-label mt-3"><h5>Password</h5></label>
+    <input type="text" id="organizations_password" size="50" name = 'organizations_password' value = ''>
 
-    <label for="exampleSelect1" class="form-label mt-4">Category</label>
-    <input type="text" id="category" name = 'category' value =''>
+    <label for="exampleSelect1" class="form-label mt-3"><h5>Category</h5></label>
+    <input type="text" id="category" size="50" name = 'category' value =''>
 
-    <label for="exampleSelect1" class="form-label mt-4">Organization ID</label>
-    <input type="text" id="oganization_id" name = 'organization_id' value ="<%= organization_id%>">
+    <label for="exampleSelect1" class="form-label mt-3"><h5>Organization ID</h5></label>
+    <input type="text" id="oganization_id"  size="50" name = 'organization_id' value ="<%= organization_id%>">
 
     <div class="d-grid gap-2">
       <div class="modal-footer">
