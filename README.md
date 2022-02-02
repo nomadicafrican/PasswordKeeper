@@ -4,6 +4,11 @@
 
 PasswordKeeper is a storage system for passwords for organzations. An organization, like Lighthouse labs, has many different accounts which need to be shared between users. This app will let an authorized user acess all the passwords of the organization. The app will also let a user generate a new password for a specific account (just like LastPass). Users will be able to generate a password based on the options the form will provide. Some of the options are: password length, contains lowercase, contairs uppercase, contains numbers, and contains symbols.
 
+## Final Project
+
+`Organizations Passwords`
+![""](https://github.com/nomadicafrican/PasswordKeeper/blob/master/public/scripts/Screen%20Shot%202022-02-02%20at%2012.27.27%20PM.png?raw=true)
+
 ## Project Setup
 
 1. Create your own copy of this repo using the `Use This Template` button, ideally using the name of your project. The repo should be marked Public
